@@ -306,19 +306,19 @@ class KlipperScreenConfig:
                 "section": "main", "name": _("Macro shortcut on sidebar"), "type": "binary",
                 "value": "True", "callback": screen.toggle_shortcut}},
             {"side_mmu_shortcut": { # Happy Hare vvv
-                "section": "main", "name": _("MMU shortcut on sidebar"), "type": "binary",
+                "section": "main", "name": _("MMU 侧边栏上的快捷方式"), "type": "binary",
                 "value": "True", "callback": screen.toggle_mmu_shortcut}},
             {"mmu_color_gates": {
-                "section": "main", "name": _("MMU show color in gates"), "type": "binary",
+                "section": "main", "name": _("MMU 在门上显示颜色"), "type": "binary",
                 "value": "True"}},
             {"mmu_color_filament": {
-                "section": "main", "name": _("MMU show colored filament"), "type": "binary",
+                "section": "main", "name": _("MMU 显示彩色耗材"), "type": "binary",
                 "value": "True"}},
             {"mmu_bold_filament": {
-                "section": "main", "name": _("MMU show bold filament"), "type": "binary",
+                "section": "main", "name": _("MMU 显示粗细丝"), "type": "binary",
                 "value": "True"}},
             {"mmu_use_spoolman": {
-                "section": "main", "name": _("MMU use SpoolMan for filaments"), "type": "binary",
+                "section": "main", "name": _("MMU 使用 SpoolMan 处理耗材"), "type": "binary",
                 "value": "False"}}, # Happy Hare ^^^
             {"font_size": {
                 "section": "main", "name": _("Font Size"), "type": "dropdown",

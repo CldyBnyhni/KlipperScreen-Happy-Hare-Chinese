@@ -49,19 +49,19 @@ class Panel(ScreenPanel):
 
         self.labels = {
             'g_decrease': self._gtk.Button('decrease', None, scale=self.bts * 1.2),
-            'gate': self._gtk.Button('mmu_select_gate', 'Gate', 'color4'),
+            'gate': self._gtk.Button('mmu_select_gate', '通道', 'color4'),
             'g_increase': self._gtk.Button('increase', None, scale=self.bts * 1.2),
-            'home': self._gtk.Button('home', 'Home', 'color2'),
-            'motors_off': self._gtk.Button('motor-off', 'Motors Off', 'color3'),
-            'checkgate': self._gtk.Button('mmu_checkgates', 'Check Gate', 'color4'),
-            'recover': self._gtk.Button('mmu_maintenance', 'Recover State...', 'color1'),
-            'servo_up': self._gtk.Button('arrow-up', 'Servo Up', 'color1'),
-            'servo_move': self._gtk.Button('arrow-right', 'Servo Move', 'color2'),
-            'servo_down': self._gtk.Button('arrow-down', 'Servo Down', 'color3'),
-            'load': self._gtk.Button('mmu_load', 'Load', 'color1'),
-            'eject': self._gtk.Button('mmu_eject', 'Eject', 'color2'),
-            'load_ext': self._gtk.Button('mmu_load_extruder', 'Load Extruder', 'color3'),
-            'unload_ext': self._gtk.Button('mmu_unload_extruder', 'Unload Extruder', 'color4'),
+            'home': self._gtk.Button('home', '归零', 'color2'),
+            'motors_off': self._gtk.Button('motor-off', '电机关闭', 'color3'),
+            'checkgate': self._gtk.Button('mmu_checkgates', '检查通道', 'color4'),
+            'recover': self._gtk.Button('mmu_maintenance', '恢复状态...', 'color1'),
+            'servo_up': self._gtk.Button('arrow-up', '舵机 Up', 'color1'),
+            'servo_move': self._gtk.Button('arrow-right', '舵机 Move', 'color2'),
+            'servo_down': self._gtk.Button('arrow-down', '舵机 Down', 'color3'),
+            'load': self._gtk.Button('mmu_load', '装载', 'color1'),
+            'eject': self._gtk.Button('mmu_eject', '卸载', 'color2'),
+            'load_ext': self._gtk.Button('mmu_load_extruder', '装载挤出机', 'color3'),
+            'unload_ext': self._gtk.Button('mmu_unload_extruder', '卸载挤出机', 'color4'),
         }
 
         self.labels['g_decrease'].connect("clicked", self.select_gate, -1)
@@ -130,9 +130,9 @@ class Panel(ScreenPanel):
                 if 'gate' in e_data:
                     self.ui_sel_gate = e_data['gate']
                     if e_data['gate'] >= 0:
-                        self.labels['load'].set_label(f"Load #{e_data['gate']}")
+                        self.labels['load'].set_label(f"装载 #{e_data['gate']}")
                     else:
-                        self.labels['load'].set_label(f"Load")
+                        self.labels['load'].set_label(f"装载")
                 if 'action' in e_data:
                     action = e_data['action']
                     if self.ui_action_button_name != None:
@@ -312,7 +312,7 @@ class Panel(ScreenPanel):
                 else:
                     self.labels['gate'].set_sensitive(gate_sensitive)
             else:
-                self.labels['gate'].set_label(f"Unknown")
+                self.labels['gate'].set_label(f"未知")
         else:
             self.labels['gate'].set_label(action)
             self.labels['gate'].set_sensitive(False)

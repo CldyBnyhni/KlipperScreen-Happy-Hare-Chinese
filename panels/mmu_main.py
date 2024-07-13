@@ -76,19 +76,19 @@ class Panel(ScreenPanel):
         }
 
         self.labels = {
-            'check_gates': self._gtk.Button('mmu_checkgates', "Gates", 'color1'),
-            'manage': self._gtk.Button('mmu_manage', "Manage...",'color2'),
+            'check_gates': self._gtk.Button('mmu_checkgates', "检查通道", 'color1'),
+            'manage': self._gtk.Button('mmu_manage', "管理...",'color2'),
             't_decrease': self._gtk.Button('decrease', None, scale=self.bts * 1.2),
             'tool': self._gtk.Button('mmu_extruder', 'Load T0', 'color2'),
             't_increase': self._gtk.Button('increase', None, scale=self.bts * 1.2),
-            'picker': self._gtk.Button('mmu_tool_picker', 'Tools...', 'color3'),
-            'eject': self._gtk.Button('mmu_eject', 'Eject', 'color4'),
-            'pause': self._gtk.Button('pause', 'MMU Pause', 'color1'),
-            'message': self._gtk.Button('warning', 'Last Error', 'color1'),
-            'unlock': self._gtk.Button('heat-up', 'Unlock', 'color2'),
-            'resume': self._gtk.Button('resume', 'Resume', 'color3'),
-            'extrude': self._gtk.Button('extrude', 'Extrude...', 'color4'),
-            'more': self._gtk.Button('mmu_more', 'More...', 'color1'),
+            'picker': self._gtk.Button('mmu_tool_picker', '工具...', 'color3'),
+            'eject': self._gtk.Button('mmu_eject', '卸载', 'color4'),
+            'pause': self._gtk.Button('pause', 'MMU 暂停', 'color1'),
+            'message': self._gtk.Button('warning', '上次错误', 'color1'),
+            'unlock': self._gtk.Button('heat-up', '解锁', 'color2'),
+            'resume': self._gtk.Button('resume', '恢复', 'color3'),
+            'extrude': self._gtk.Button('extrude', '挤出...', 'color4'),
+            'more': self._gtk.Button('mmu_more', '更多...', 'color1'),
             'tool_icon': self._gtk.Image('mmu_extruder', self._gtk.img_width * 0.8, self._gtk.img_height * 0.8),
             'tool_label': Gtk.Label('Unknown'),
             'filament': Gtk.Label('Filament: Unknown'),
@@ -99,6 +99,7 @@ class Panel(ScreenPanel):
             'unload_bypass_img': self._gtk.Image('mmu_unload_bypass'), # Alternative for eject
             'sync_drive_img': self._gtk.Image('mmu_synced_extruder', self._gtk.img_width * 0.8, self._gtk.img_height * 0.8), # Alternative for tool_icon
         }
+
         self.labels['eject_img'] = self.labels['eject'].get_image()
         self.labels['tool_img'] = self.labels['tool'].get_image()
         self.labels['tool_picker_img'] = self.labels['picker'].get_image()
@@ -384,9 +385,9 @@ class Panel(ScreenPanel):
             self.labels['eject'].set_label(f"Unload")
         else:
             self.labels['picker'].set_image(self.labels['tool_picker_img'])
-            self.labels['picker'].set_label(f"Tools...")
+            self.labels['picker'].set_label(f"工具...")
             self.labels['eject'].set_image(self.labels['eject_img'])
-            self.labels['eject'].set_label(f"Eject")
+            self.labels['eject'].set_label(f"卸载")
 
     def update_tool_buttons(self, tool_sensitive=True):
         mmu = self._printer.get_stat("mmu")
