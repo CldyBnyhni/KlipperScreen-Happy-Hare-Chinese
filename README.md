@@ -1,8 +1,15 @@
-# 📌 ANNOUNCEMENT: KlipperScreen-Happy Hare edition now requires an upgraded Happy Hare v2 software
-Happy Hare v2 [available here](https://github.com/moggieuk/Happy-Hare)
+# IMPORTANT
 
 > [!IMPORTANT]  
-> Also after updating KlipperScreen be sure to re-run `happy_hare/install_ks.sh -g <num_gates>` to install new images and update menus.
+> **After updating KlipperScreen be sure to re-run:**
+> ```
+> cd ~/KlipperScreen/happy_hare
+> ./install_ks.sh -g <num_gates>
+> ```
+> where `<num_gates>` is the number of gates on your MMU.<br>
+> **This will install new images, update menus and other config.**
+
+<hr>
 
 # KlipperScreen - MMU Happy Hare Edition
 
@@ -28,7 +35,7 @@ Happy Hare v2 [available here](https://github.com/moggieuk/Happy-Hare)
 Read more on how [MMU Panels work...](docs/MMU.md)
 
 ## Introduction
-KlipperScreen Happy Hare edition is quite a mouthful!  It is a forked (but up-to-date) version of KlipperScreen designed to run/manage any MMU using the Happy Hare driver software.  [Click here to access the original documentation.](https://klipperscreen.readthedocs.io/en/latest/)
+KlipperScreen Happy Hare edition is quite a mouthful!  It is a forked (but kept up-to-date) version of KlipperScreen that is enhanced with functionality designed to run/manage any MMU using the Happy Hare driver software.  [Click here to access the original documentation.](https://klipperscreen.readthedocs.io/en/latest/)
 
 :pushpin: KlipperScreen is an amazing piece of software but unfortunally lacks the level of panel integration and features I needed for this project.  I hope in the future to have changes integrated so that this becomes a layered install rather than a fork.  Until then you must follow these install directions closely. **Also note that I regularly (every 2 weeks) re-merge with the master project so the Happy Hare addition is only additive and all original functionality is untouched.**
 
